@@ -1,0 +1,10 @@
+{
+  "name": "sxopop-shortlink",
+  "version": "1.0.0",
+  "description": "SXOPOP Short Link Service",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  }
+}
