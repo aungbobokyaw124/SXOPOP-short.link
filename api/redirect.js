@@ -1,5 +1,4 @@
-const { supabase } = require('../lib/supabase.js')
-
+const { supabase } = require('../lib/supabase.js')import { supabase } from '../lib/supabase.js'
 export default async function handler(req, res) {
   const { slug } = req.query || {}
   if (!slug) return res.status(400).json({ error: 'Slug required' })
