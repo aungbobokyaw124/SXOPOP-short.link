@@ -1,4 +1,4 @@
-import { supabase } from '../lib/supabase.js'
+const { supabase } = require('../lib/supabase.js')
 
 function generateSlug(length = 6) {
   const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
