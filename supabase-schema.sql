@@ -6,10 +6,13 @@ CREATE TABLE IF NOT EXISTS links (
   original_url TEXT NOT NULL,
   clicks INTEGER DEFAULT 0,
   expires_at TIMESTAMP WITH TIME ZONE,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  user_id UUID REFERENCES auth.users(id)
 );
 
+ALTER TABLE links ADD COLUMN IF NOT EXISTS user_id UUID REFERENCES auth.users(id);
 CREATE INDEX IF NOT EXISTS idx_links_slug ON links(slug);
+CREATE INDEX IF NOT EXISTS idx_links_user_id ON links(user_id);
 
 ALTER TABLE links ENABLE ROW LEVEL SECURITY;
 
